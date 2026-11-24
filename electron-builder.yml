@@ -1,0 +1,59 @@
+appId: com.sadavox.studio
+productName: SadaVox Studio
+copyright: Copyright © 2026 SadaVox Studio
+asar: false
+directories:
+  output: release
+  buildResources: electron
+files:
+  - dist/**/*
+  - dist-desktop/**/*
+  - electron/**/*
+  - package.json
+  - node_modules/**/*
+  - "!node_modules/vite/**/*"
+  - "!node_modules/typescript/**/*"
+  - "!node_modules/tsx/**/*"
+  - "!node_modules/esbuild/**/*"
+  - "!node_modules/@esbuild/**/*"
+  - "!node_modules/@tailwindcss/**/*"
+  - "!node_modules/tailwindcss/**/*"
+  - "!node_modules/@vitejs/**/*"
+  - "!node_modules/@types/**/*"
+  - "!node_modules/autoprefixer/**/*"
+  - "!node_modules/electron-builder/**/*"
+  - "!node_modules/app-builder-lib/**/*"
+  - "!**/node_modules/*/{CHANGELOG.md,README.md,readme.md,test,__tests__,tests,powered-test,example,examples}"
+win:
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  artifactName: SadaVox-Studio-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+mac:
+  category: public.app-category.video
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  artifactName: SadaVox-Studio-${version}-${arch}.${ext}
+linux:
+  category: AudioVideo
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+  artifactName: SadaVox-Studio-${version}-${arch}.${ext}

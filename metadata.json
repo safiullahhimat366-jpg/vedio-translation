@@ -1,0 +1,6 @@
+{
+  "name": "SadaVox Studio — Video & Voice Dubbing",
+  "description": "Translate spoken audio in videos, audio files, or live microphone recordings into Pashto and 10+ languages while matching emotional tone and original duration.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
